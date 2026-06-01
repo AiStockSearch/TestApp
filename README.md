@@ -1,97 +1,128 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
-# Getting Started
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+# TESTAPP (com.testapp)
 
-## Step 1: Start Metro
+Многошаговое мобильное приложение для регистрации пользователей с разделением ролей на **Клиента (Client)** и **Перевозчика (Carrier)**. Проект разработан на базе React Native 0.85 и TypeScript.
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+---
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+## 📱 Описание экранов и логики (Flow)
 
-```sh
-# Using npm
-npm start
+Приложение представляет собой последовательную многошаговую форму регистрации (Multi-step Form) со следующим флоу:
 
-# OR using Yarn
-yarn start
+1. **Ввод номера телефона (`PhoneStep`)**
+* Экран запрашивает ввод мобильного номера телефона.
+* Поля ввода используют маскирование для предотвращения некорректного ввода.
+* <img src="image/simulator_screenshot_5B232B95-8381-4510-B297-BDD6A07469B9.png" height="500" alt="Экран ввода телефона" />
+
+2. **Выбор роли (`RoleStep`)**
+* Пользователь выбирает свой профиль: **Client** или **Carrier**.
+* Выбранная роль сохраняется локально в `AsyncStorage` для динамической настройки полей на следующих шагах.
+* <img src="image/simulator_screenshot_725F466F-002D-43EC-AA0B-5DF76CBA5151.png" height="500" alt="Экран выбор роли" />
+
+
+3. **Подтверждение номера (`SMSStep`)**
+* Экран ввода 6-значного SMS-кода подтверждения.
+* Реализована валидация кода. При вводе неверного кода отображается ошибка *"SMS code not valid"* и активируется кнопка повторной отправки.
+* <img src="image/simulator_screenshot_A7A9FDB8-3FF5-4C4E-8A89-F91589B31F4C.png" height="500" alt="Экран подтверждение номера" />
+
+4. **Заполнение профиля (`ProfileStep`)**
+* Динамическая форма, состав полей которой зависит от выбранной роли (управляется утилитой `visibleInputs`).
+* **Клиент (Client)** заполняет базовые данные: ФИО, Гражданство, Дата рождения, ИИН.
+* **Перевозчик (Carrier)** заполняет расширенный набор данных, включая Номер водительского удостоверения, Категорию прав и Дату выдачи.
+* <img src="image/simulator_screenshot_ACCA5A1A-0064-4EDA-9E79-13E8C7AF9AEE.png" height="500" alt="Экран заполнение профиля" />
+
+
+5. **Проверка данных (`RegistrationStep`)**
+* Финальный экран-карточка (Summary View) со всеми введенными данными.
+* Позволяет быстро набрать номер телефона через нативную интеграцию API (`Linking.openURL`).
+* Кнопка **Edit** возвращает на шаг редактирования профиля с сохранением данных.
+* Кнопка **Close** очищает локальное хранилище и сбрасывает стек на начальный экран.
+* <img src="image/simulator_screenshot_5A63753D-307C-450C-811D-60B9F5622F13.png" height="500" alt="Экран проверка данных" />
+
+
+---
+
+## 🛠 Перечень основных зависимостей
+
+Полный список зафиксирован в `package.json`. Основной стек включает:
+
+### Core & Navigation
+
+* `react`: `19.2.3`
+* `react-native`: `0.85.3`
+* `@react-navigation/native` (`^7.2.5`) & `@react-navigation/native-stack` (`^7.16.0`) — нативная маршрутизация и управление стеком экранов.
+
+### UI & Стилизация
+
+* `styled-components` (`^6.4.2`) — CSS-in-JS подход для стилизации изолированных компонентов.
+* `react-native-svg` (`^15.15.5`) — рендеринг векторной графики (например, иконка телефона).
+* `react-native-keyboard-controller` (`^1.21.9`) — плавное управление поведением клавиатуры на экранах ввода.
+
+### Локализация и Хранение
+
+* `i18next` & `react-i18next` — интернационализация приложения (поддержка языковых локалей, переключатель `en`).
+* `@react-native-async-storage/async-storage` (`^3.1.1`) — хранение сессии, выбранной роли и промежуточного состояния регистрации.
+
+---
+
+## 🚀 Инструкция по запуску проекта
+
+Проект использует менеджер пакетов **pnpm** (версии `>=10.29.1`). Перед запуском убедитесь, что у вас установлена Node.js версии не ниже `22.11.0`.
+
+### 1. Установка зависимостей
+
+Установите все пакеты и выполните скрипты пост-установки (включая синхронизацию путей `tsconfig`):
+
+```bash
+pnpm install
+
 ```
 
-## Step 2: Build and run your app
+### 2. Запуск локального сервера (Metro Bundler)
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+```bash
+pnpm start
 
-### Android
-
-```sh
-# Using npm
-npm run android
-
-# OR using Yarn
-yarn android
 ```
 
-### iOS
+### 3. Запуск через CLI (Инструменты разработки)
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+* **Запуск на Android-эмуляторе / устройстве:**
+```bash
+pnpm android
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
 ```
 
-Then, and every time you update your native dependencies, run:
 
-```sh
-bundle exec pod install
+* **Запуск на iOS-симуляторе:**
+```bash
+pnpm ios
+
 ```
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+* **Сборка на android fastline:**
+```bash
+pnpm build:android
 
-```sh
-# Using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
 ```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+### 4. Автоматическая сборка проекта (Android Build via Fastlane)
 
-## Step 3: Modify your app
+В скриптах автоматизации настроена сборка релизного / бета-пакета для Android:
 
-Now that you have successfully run the app, let's make changes!
+```bash
+pnpm build:android
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+```
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+*За кулисами скрипт переходит в директорию `android` и вызывает `bundle exec fastlane android beta`.*
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+---
 
-## Congratulations! :tada:
+## ⚠️ Известные ограничения (Known Limitations)
 
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+1. **Эмуляция SMS:** На данном этапе подтверждение SMS-кода работает в режиме мока (заглушки) — валидация происходит локально на клиенте, без интеграции с реальным шлюзом рассылки (SMS Gateway).
+2. **Ограничения навигации на финальном шаге:** На экране `RegistrationStep` кнопка "Назад" в навигационной панели заблокирована/отсутствует по дизайну, чтобы предотвратить случайный возврат назад без явного намерения отредактировать профиль. Переход осуществляется строго кнопками управления сессией (**Edit** / **Close**).
+3. **Хранение Keystore:** Локальные файлы подписи Android приложения (`.keystore`) и приватные ключи (`.env`) исключены из репозитория в целях безопасности. Перед ручным выполнением команд Fastlane внутри папки `/android` необходимо сгенерировать локальный ключ подписи.

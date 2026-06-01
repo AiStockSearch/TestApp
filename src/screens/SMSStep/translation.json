@@ -1,0 +1,14 @@
+{
+    "en":{
+        "title": "Phone number confirmation",
+        "description": "Enter the code that was sent to your phone number",
+        "navBarTitle": "Registration",
+        "buttonText": "Send code again"
+    },
+    "ru": {
+        "title": "Подтверждение номера телефона",
+        "description": "Введите код, который был отправлен на ваш номер телефона",
+        "navBarTitle": "Регистрация",
+        "buttonText": "Отправить код повторно"
+    }
+}

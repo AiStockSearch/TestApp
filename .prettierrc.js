@@ -1,5 +1,11 @@
 module.exports = {
-  arrowParens: 'avoid',
-  singleQuote: true,
-  trailingComma: 'all',
+  arrowParens: 'always', // Всегда оборачивать аргументы стрелочной функции в скобки: (x) => x
+  bracketSameLine: false, // Переносить закрывающую JSX скобку на новую строку
+  bracketSpacing: true, // Пробелы внутри фигурных скобок: { foo: bar }
+  singleQuote: true, // Использовать одинарные кавычки по умолчанию
+  trailingComma: 'all', // Запятые везде, где это возможно (включая аргументы функций и массивы)
+  tabWidth: 2, // Отступ — 2 пробела
+  useTabs: false, // Никаких табуляций, только пробелы
+  printWidth: 60, // Автоперенос строки, если код превышает 100 символов в длину
+  semi: true, // Точка с запятой обязательна в конце каждой инструкции
 };

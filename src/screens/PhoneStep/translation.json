@@ -1,0 +1,19 @@
+{
+    "en":{
+        "navBarTitle": "Registration",
+        "title": "Enter phone number",
+        "description": "Enter your phone number",
+        "buttonText": "Next",
+        "placeholder": "+7 (000) 000-00-00",
+        "label": "Phone number"
+    },
+    "ru": {
+        "navBarTitle": "Регистрация",
+        "title": "Введите номер телефона",
+        "description": "Введите ваш номер телефона",
+        "buttonText": "Далее",
+        "placeholder": "+7 (000) 000-00-00",
+        "label": "Номер телефона"
+
+    }
+}

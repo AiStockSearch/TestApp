@@ -1,0 +1,14 @@
+node_modules/
+build/
+dist/
+package.json
+scripts/sync-tsconfig-paths.js
+scripts/
+metro.config.js
+App.cosmos.tsx
+cosmos.imports.ts
+src/components/atoms/**/__fixture__/**
+src/components/atoms/**/__fixtures__/**
+src/screens/createPhone copy/**
+src/screens/createSMS copy/**
+src/screens/createProfilw/**

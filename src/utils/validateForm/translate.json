@@ -1,0 +1,73 @@
+{
+  "en": {
+      "category": {
+          "invalid": "Invalid category of driver's license",
+          "length": "Category of driver's license must be 1 character long"
+      },
+      "dateString": {
+          "invalidFormat": "Invalid date format (expected DD.MM.YYYY)",
+          "dateExists": "Date does not exist",
+          "dateFuture": "Date cannot be in the future"
+      },
+      "birthday": {
+          "ageRestriction": "Age must be between 18 and 65 years"
+      },
+      "iin": {
+          "min": "IIN must be at least 10 digits long",
+          "invalid": "Invalid IIN format (only digits are allowed)"
+      },
+      "name": {
+          "invalid": "Invalid name (only Latin letters are allowed)",
+          "min": "Name must be at least 3 characters long",
+          "max": "Name must be at most 100 characters long"
+      },
+      "isCardNumber": {
+          "invalid": "Invalid card number or driver's license number",
+          "min": "Card number or driver's license number must be at least 10 characters long"
+      },
+      "driverLicense": {
+          "invalid": "Invalid driver's license number"
+      },
+      "citizenship": {
+          "invalid": "Invalid citizenship",
+          "min": "Citizenship must be at least 3 characters long"
+      },
+    "smsCode": "SMS code not valid",
+      
+    },
+  "ru": {
+    "category": {
+      "invalid": "Неверная категория водительского удостоверения",
+      "length": "Категория водительского удостоверения должна состоять из 1 символа"
+    },
+    "dateString": {
+      "invalidFormat": "Неверный формат даты (ожидается ДД.ММ.ГГГГ)",
+      "dateExists": "Указана несуществующая дата",
+      "dateFuture": "Дата не может быть в будущем"
+    },
+    "birthday": {
+      "ageRestriction": "Возраст должен быть от 18 до 65 лет"
+    },
+    "iin": {
+      "min": "ИИН должен состоять минимум из 10 цифр",
+      "invalid": "Некорректный формат ИИН (разрешены только цифры)"
+    },
+    "name": {
+      "invalid": "Некорректное имя (разрешены только латинские буквы)",
+      "min": "Имя должно состоять минимум из 3 символов",
+      "max": "Имя должно состоять максимум из 100 символов"
+    },
+    "isCardNumber": {
+      "invalid": "Некорректный номер карты или удостоверения",
+      "min": "Номер карты или удостоверения должен состоять минимум из 10 символов"
+    },
+    "driverLicense": {
+      "invalid": "Некорректный номер водительского удостоверения"
+    },
+    "citizenship": {
+      "invalid": "Некорректно указано гражданство",
+      "min": "Гражданство должно состоять минимум из 3 символов"
+    },
+    "smsCode": "Код неверный"
+    }
+}

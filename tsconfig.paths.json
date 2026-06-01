@@ -1,0 +1,91 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ],
+      "@": [
+        "src"
+      ],
+      "@organism/*": [
+        "src/components/organism/*"
+      ],
+      "@organism": [
+        "src/components/organism"
+      ],
+      "@atoms/*": [
+        "src/components/atoms/*"
+      ],
+      "@atoms": [
+        "src/components/atoms"
+      ],
+      "@molecules/*": [
+        "src/components/molecules/*"
+      ],
+      "@molecules": [
+        "src/components/molecules"
+      ],
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@components": [
+        "src/components"
+      ],
+      "@screens/*": [
+        "src/screens/*"
+      ],
+      "@screens": [
+        "src/screens"
+      ],
+      "@navigation/*": [
+        "src/navigation/*"
+      ],
+      "@navigation": [
+        "src/navigation"
+      ],
+      "@locales/*": [
+        "src/provider/locales/*"
+      ],
+      "@locales": [
+        "src/provider/locales"
+      ],
+      "@customhooks/*": [
+        "src/hooks/*"
+      ],
+      "@customhooks": [
+        "src/hooks"
+      ],
+      "@utils/*": [
+        "src/utils/*"
+      ],
+      "@utils": [
+        "src/utils"
+      ],
+      "@fsm/*": [
+        "src/fsm/*"
+      ],
+      "@fsm": [
+        "src/fsm"
+      ],
+      "@services/*": [
+        "src/services/*"
+      ],
+      "@services": [
+        "src/services"
+      ],
+      "@constants/*": [
+        "src/constants/*"
+      ],
+      "@constants": [
+        "src/constants"
+      ],
+      "@tests/*": [
+        "__tests__/*"
+      ],
+      "@tests": [
+        "__tests__"
+      ]
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+    "en":{
+        "title": "Role",
+        "description": "Select your role",
+        "navBarTitle": "Registration",
+        "buttonText": "Next",
+        "clientRoleTitle": "Client",
+        "clientRoleDescription": "Select your role as a client",
+        "carrierRoleTitle": "Carrier",
+        "carrierRoleDescription": "Select your role as a carrier"
+    },
+    "ru": {
+        "title": "Роль",
+        "description": "Выберите вашу роль",
+        "navBarTitle": "Регистрация",
+        "buttonText": "Далее",
+        "clientRoleTitle": "Заказчик",
+        "clientRoleDescription": "Выберите вашу роль как заказчика",
+        "carrierRoleTitle": "Перевозчик",
+        "carrierRoleDescription": "Выберите вашу роль как перевозчика"
+    }
+}

@@ -1,0 +1,12 @@
+{
+  "port": 5000,
+  "fixtureFileSuffix": ".fixture.tsx",
+  "exposeImports": true,
+  "watchDirs": ["src"],
+  "exclude": [
+    "**/node_modules/**",
+    "**/vendor/**",
+    "**/ios/**",
+    "**/android/**"
+  ]
+}

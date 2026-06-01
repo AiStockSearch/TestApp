@@ -1,0 +1,17 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/Geologica-Bold.ttf",
+      "sha1": "2801c60db74a186d33217e89be52ca3eb5aeb2f2"
+    },
+    {
+      "path": "assets/fonts/Geologica-Light.ttf",
+      "sha1": "c03933c89a7cf0d19fc8c7ed5d3d2180130e26e1"
+    },
+    {
+      "path": "assets/fonts/Geologica-Regular.ttf",
+      "sha1": "5f8ae8572502d669a44de9380abf1f94ccc00a13"
+    }
+  ]
+}

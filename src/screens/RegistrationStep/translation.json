@@ -1,0 +1,20 @@
+{
+    "en":{
+        "title": "Registration",
+        "description": "Enter your registration information",
+        "navBarTitle": "Registration",
+        "buttonText": "Next",
+        "buttonEdit": "Edit",
+        "buttonRegister": "Register",
+        "buttonClose": "Close"
+    },
+    "ru": {
+        "title": "Регистрация",
+        "description": "Введите вашу информацию о регистрации",
+        "navBarTitle": "Регистрация",
+        "buttonText": "Далее",
+        "buttonEdit": "Редактировать",
+        "buttonRegister": "Зарегистрироваться",
+        "buttonClose": "Закрыть"
+    }
+}
